@@ -1,0 +1,41 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(227, 227, 227);
+}
+
+.band-name{
+    font-size: 100px;
+}
+
+.band-image{
+    border: 3px solid rgb(157, 52, 52);
+    border-radius: 15px;
+}
+
+.headline{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.event-description{
+    font-size: 20px;
+}
+
+.date-time{
+    background-color: black;
+    color: red;
+    border-radius: 15px;
+    font-weight: bold;
+    width: 40vw;
+    margin: 5px auto;
+}
+
+.location{
+    background-color: black;
+    color: red;
+    border-radius: 15px;
+    font-weight: bold;
+    width: 40vw;
+    margin: 5px auto;
+}
