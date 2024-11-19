@@ -5,7 +5,7 @@
 }
 
 .band-name{
-    font-size: 100px;
+    font-size: 80px;
     margin-top: 20px;
 }
 
@@ -20,22 +20,34 @@
     font-size: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
+    width: 60vw;
 }
 
 .date-time{
     background-color: black;
-    color: red;
+    color: white;
     border-radius: 15px;
     font-weight: bold;
-    width: 40vw;
+    width: 30vw;
+    padding: 20px;
     margin: 5px auto;
 }
 
 .location{
     background-color: black;
-    color: red;
+    color: white;
     border-radius: 15px;
     font-weight: bold;
     width: 40vw;
+    padding: 20px;
     margin: 15px auto;
+}
+
+.favourite{
+    width:40px;
+    height: 40px;
+}
+
+.fav-button{
+    border: 0px;
 }
