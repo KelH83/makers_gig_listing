@@ -1,22 +1,43 @@
-import "./Gig.css"
-import {useState} from "react";
+import "./Gig.css";
+
 const Gig = (props) => {
-    const [fav, setFav] = useState(false)
+const { band_name, description, time, location, fav, toggleFavourite } = props;
 
-    const favourite = () =>{
-        setFav(!fav)
-    }
+const date = new Date(time);
 
-    return <>
-    <h1 className="band-name">{props.name}</h1>
-    <img className="band-image"src={props.src} alt="image of band"/>
-    <p className="event-description">{props.description}</p>
-    <p className="date-time">{props.dateTime}</p>
-    <p className="location">{props.location}</p>
-    <p>Favourite</p>
-    <button className="fav-button" onClick={favourite}><img className="favourite" src={fav ? "src/assets/full_star.png" : "src/assets/star.png"}/></button>
-    <hr/>
+const formatter = new Intl.DateTimeFormat('en-US', {
+weekday: 'long',
+year: 'numeric',
+month: 'long',
+day: 'numeric',
+hour: '2-digit',
+minute: '2-digit',
+timeZone: 'UTC',
+timeZoneName: 'short'
+});
+
+const formattedDate = formatter.format(date)
+
+
+return (
+    <>
+    <div className={fav ? "band-container-fav" : "band-container"}>
+    <h1 className="band-name">{band_name}</h1>
+    <p className="event-description">{description}</p>
+    <p className="date-time">{formattedDate}</p>
+    <p className="location">{location}</p>
+    <p>{fav ? "UnFavourite" : "Favourite"}</p>
+    <button className="fav-button" onClick={toggleFavourite}>
+    <img
+        className="favourite"
+        src={fav ? "src/assets/full_star.png" : "src/assets/star.png"}
+        alt={"image of band"}
+        />
+    </button>
+    <hr />
+    </div>
     </>
+);
 };
 
 export default Gig;
