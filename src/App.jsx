@@ -7,7 +7,8 @@ function App() {
   const [gigs, setGigs] = useState([]);
 
   useEffect(() => {
-    const URL = "https://makers-gig-backend.onrender.com/events";
+    // const URL = "https://makers-gig-backend.onrender.com/events";
+    const URL = "https://makers-react-bandapi.onrender.com/gigs";
     fetch(URL)
       .then((response) => response.json())
       .then((data) => setGigs(data));
@@ -16,7 +17,7 @@ function App() {
   const toggleFavourite = (id) => {
     setGigs((prevGigs) =>
       prevGigs.map((gig) =>
-        gig.event_id === id ? { ...gig, fav: !gig.fav } : gig
+        gig.id === id ? { ...gig, fav: !gig.fav } : gig
       )
     );
   };
@@ -31,9 +32,9 @@ function App() {
     <div>
       {sortedGigs.map((gig) => (
         <Gig
-          key={gig.event_id}
+          key={gig.id}
           {...gig}
-          toggleFavourite={() => toggleFavourite(gig.event_id)}
+          toggleFavourite={() => toggleFavourite(gig.id)}
         />
       ))}
     </div>

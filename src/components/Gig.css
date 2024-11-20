@@ -15,6 +15,13 @@
     margin: 20px auto;
 }
 
+.band-img{
+    width:200px;
+    height: 200px;
+    border: 3px solid rgb(165, 51, 51);
+    border-radius: 8px;
+}
+
 
 .event-description{
     margin: 10px auto 20px auto;
