@@ -31,7 +31,7 @@ return (
     <button className="fav-button" onClick={toggleFavourite}>
     <img
         className="favourite"
-        src={fav ? "src/assets/full_star.png" : "src/assets/star.png"}
+        src={fav ? "assets/full_star.png" : "assets/star.png"}
         alt={"image of band"}
         />
     </button>
