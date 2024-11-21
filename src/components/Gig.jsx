@@ -1,7 +1,7 @@
 import "./Gig.css";
 
 const Gig = (props) => {
-const { band_name, imageURL, description, time, location, fav, toggleFavourite } = props;
+const { band_name, imageURL, description, time, location,playlist, fav, toggleFavourite } = props;
 
 const date = new Date(time);
 
@@ -26,6 +26,7 @@ return (
     <p className="event-description">{description}</p>
     <p className="date-time">{formattedDate}</p>
     <p className="location">{location}</p>
+    <iframe src={playlist}width="70%" height="250" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     <p>{fav ? "UnFavourite" : "Favourite"}</p>
     <button className="fav-button" onClick={toggleFavourite}>
     <img
